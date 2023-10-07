@@ -13,13 +13,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            HappyBirthdayTheme {
+            MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -33,14 +34,15 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingText(message: String, modifire: Modifier = Modifier){
     Text(
-        text = message
+        text = message,
+        fontSize = 100.sp
     )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun BirthdayCardPreview(){
-    HappyBirthdayTheme {
+    MyApplicationTheme {
         GreetingText(message = "Happy birthday Nurtore!")
     }
 }
